@@ -29,7 +29,7 @@ function hasBox(el: Element): boolean {
 }
 
 /** What kind of thing this is, in words a reviewer uses. */
-export function nounFor(tag: string, kind: TargetKind, r = '', inputType = '', boxed = false, titled = false): string {
+function nounFor(tag: string, kind: TargetKind, r = '', inputType = '', boxed = false, titled = false): string {
   switch (kind) {
     case 'action':
       if (r === 'tab') return 'Tab';
@@ -118,7 +118,7 @@ function nameOf(el: Element, kind: TargetKind): string {
 
 function quoted(noun: string, name: string): string {
   const clean = truncate(name.replace(/\s+/g, ' ').trim(), MAX_NAME);
-  return clean ? `${noun} “${clean}”` : noun;
+  return clean ? `${noun} "${clean}"` : noun;
 }
 
 /** `Button "Choose Pro"`, `Card "Your plan"`, `Text box "Email"`, `Whole page`. */
